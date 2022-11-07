@@ -47,7 +47,7 @@ jobs:
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
         scanners: sca
-        params: --github  --github.token:'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' --cx-flow.scanTimeout:120 --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.apache.http.wire=TRACE --sca.filter-dependency-type:'Direct' --cxflow.break-build:true'  --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --cx-flow.filter-severity --cx-flow.filter-category --checkmarx.disable-clubbing=true --repo-url=${{ github.event.repository.url }}
+        params: --github --sca.tenant='Plugins' --sca.username='hussains' --sca.password='Cx123456!' --sca.apiUrl='https://api-sca.checkmarx.net'  --github.token:'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' --cx-flow.scanTimeout:120 --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.apache.http.wire=TRACE --sca.filter-dependency-type:'Direct' --cxflow.break-build:true'  --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --cx-flow.filter-severity --cx-flow.filter-category --checkmarx.disable-clubbing=true --repo-url=${{ github.event.repository.url }}
     # Upload the Report for CodeQL/Security Alerts
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v2
