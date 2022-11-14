@@ -49,7 +49,7 @@ jobs:
         scanners: sast, sca
         break_build: true
         bug_tracker: GITHUBPULL
-        params: --sca.team=${{ secrets.CHECKMARX_TEAM }} --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.head_ref }} --merge-id=${{ github.event.number }} --cx-flow.filterSeverity --cx-flow.filterCategory --github  --sca.apiUrl='https://api-sca.checkmarx.net'  --github.token:'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' --cx-flow.scanTimeout:120 --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.apache.http.wire=TRACE  --namespace=${{ github.repository_owner }}  --checkmarx.disable-clubbing=true --repo-url=${{ github.event.repository.url }}
+        params: --sca.team=${{ secrets.CHECKMARX_TEAM }} --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.head_ref }} --merge-id=${{ github.event.number }} --cx-flow.filterSeverity --cx-flow.filterCategory --github  --cx-flow.scanTimeout:120 --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.apache.http.wire=TRACE --checkmarx.disable-clubbing=true --repo-url=${{ github.event.repository.url}}
     # Upload the Report for CodeQL/Security Alerts
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v2
