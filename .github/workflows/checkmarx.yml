@@ -46,9 +46,9 @@ jobs:
         checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
-        sca_password: ${{ secrets.CHECKMARX_SCA_PASSWORD }}
-        sca_username: ${{ secrets.CHECKMARX_SCA_USERNAME }}
-        sca_tenant: ${{ secrets.CHECKMARX_SCA_TENANT }}
+        sca_password: ${{ secrets.SCA_PASSWORD }}
+        sca_username: ${{ secrets.SCA_USERNAME }}
+        sca_tenant: ${{ secrets.SCA_TENANT }}
         scanners: sast, sca
         break_build: true
         bug_tracker: GITHUBPULL
